@@ -7,13 +7,13 @@
 </template>
 <script>
 export default {
-  name: "toast",
+  name: 'toast',
   data() {
     return {
       show: false,
-      text: ""
+      text: '',
     };
-  }
+  },
 };
 </script>
 <style lang="less" scoped>

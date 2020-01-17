@@ -6,18 +6,15 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    name: 'loading',
-    data() {
-        return {
-            loadingImg: require('@/assets/img/loading.png'),
-            show: false
-        }
-    }
+<script lang="ts">
+import Vue from 'vue'
+export default class LoadingComponent extends Vue {
+    // 原data
+    loadingImg: string = require('@/assets/img/loading.png')
+    show: boolean = false
 }
 </script>
-<style lang='less' scoped>
+<style lang='scss' scoped>
 .mask {
     position: fixed;
     width: 100%;
@@ -25,7 +22,7 @@ export default {
     min-height: 500px;
     top: 0;
     left: 0;
-    background: transparent;
+    background: rgba($color: #000000, $alpha: 0.2);
     z-index: 9999;
     .loading_content {
         position: absolute;
@@ -34,8 +31,8 @@ export default {
         transform: translate(-50%, -50%);
         text-align: center;
         .loadingImg {
-            width: 130px;
-            height: 130px;
+            width: 100px;
+            height: 100px;
             animation: loading 1s linear infinite;
         }
         .loadingText {

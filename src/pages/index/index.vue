@@ -20,7 +20,14 @@ import HelloWorld from '@/components/HelloWorld.vue';
     HelloWorld,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private created() {
+   this.showLoading();
+  }
+  private showLoading() {
+    (this as any).$loading.show();
+  }
+}
 </script>
 
 <style lang="scss">
