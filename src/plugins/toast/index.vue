@@ -5,18 +5,20 @@
     </div>
   </transition>
 </template>
-<script>
-export default {
-  name: 'toast',
-  data() {
-    return {
-      show: false,
-      text: '',
-    };
+<script lang='ts'>
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component({
+  props: {
+    text: String,
   },
-};
+})
+export default class ToastComponent extends Vue {
+  private show: boolean = false
+}
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .alert-fade-enter-active, .alert-fade-leave-active {
   transition: opacity 0.3s;
 }

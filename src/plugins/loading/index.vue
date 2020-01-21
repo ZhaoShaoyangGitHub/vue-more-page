@@ -7,11 +7,11 @@
     </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Vue } from 'vue-property-decorator';
+@Component
 export default class LoadingComponent extends Vue {
-    // 原data
-    loadingImg: string = require('@/assets/img/loading.png')
-    show: boolean = false
+    private show: boolean = false
+    private loadingImg: string = require('@/assets/img/loading.png')
 }
 </script>
 <style lang='scss' scoped>
