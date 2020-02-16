@@ -4,7 +4,7 @@ class Loading {
     install(Vue: any) {
         const loadingCom = Vue.extend(LoadingComponent);
         const ins = new loadingCom();
-        ins.$mount(document.createElement('div'));  // 挂载到一个元素上
+        ins.$mount(document.createElement('div'));  // 挂载到一个元素上de
         document.body.appendChild(ins.$el);
         Vue.prototype.$loading = {
             show() {
