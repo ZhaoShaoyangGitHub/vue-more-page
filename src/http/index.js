@@ -16,7 +16,7 @@ let http = axios.create({
   timeout: 60 * 1000
 })
 
-// 获取CancelToken 有需要的话可以用source.cancel();取消其他请求
+// 获取CancelToken 有需要的话可以用source.cancel(); 取消其他请求
 const CancelToken = axios.CancelToken, source = CancelToken.source();
 let queueNum = 0
 
