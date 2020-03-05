@@ -1,8 +1,16 @@
 <template>
   <div class="about">
+    <el-alert
+      class="info-text"
+      title="Welcome to Your Vue.js + TypeScript App"
+      type="info"
+      center
+      show-icon>
+    </el-alert>
     <h1>{{title}}</h1>
   </div>
 </template>
+
 <script lang="ts">
 import { Component, Vue} from 'vue-property-decorator';
 @Component({})
@@ -16,3 +24,6 @@ export default class About extends Vue {
   }
 }
 </script>>
+
+<style lang="scss" scoped>
+</style>
