@@ -11,10 +11,10 @@
           <router-link to="/home"><el-button type="primary" plain>当前页面HOME</el-button></router-link>
         </el-col>
         <el-col :span="24" class="nav-link">
-          <router-link to="/about"><el-button type="primary" plain>当前页面ABOUT</el-button></router-link>
+          <router-link to="/slot-page"><el-button type="primary" plain>SLOT</el-button></router-link>
         </el-col>
         <el-col :span="24" class="nav-link">
-          <a href="/admin.html"><el-button type="warning" plain>{{selfKey1 | filterValue}}{{computedKay}}</el-button></a>
+          <a href="/admin.html"><el-button type="warning" plain>{{selfKey1}}</el-button></a>
         </el-col>
       </el-aside>
       <el-main><router-view></router-view></el-main>
@@ -28,11 +28,6 @@ import { Route, RawLocation } from 'vue-router';
 
 @Component({
   components: {},
-  filters: {
-    filterValue(value: any) {
-      return value += '改变';
-    },
-  },
 })
 export default class App extends Vue {
 
@@ -41,20 +36,6 @@ export default class App extends Vue {
   // 生命周期
   created() {
     console.log('我是create生命周期')
-  }
-
-  mounted() {
-    this.changeTxt()
-  }
-
-  // 计算属性
-  get computedKay() {
-    return this.selfKey1.length;
-  }
-
-  @Watch('selfKey1')
-  getSelfKey1(newVal: string, oldVal: string) {
-    console.log(oldVal, newVal);
   }
 
   // 导航守卫函数
@@ -66,14 +47,6 @@ export default class App extends Vue {
   }
   public beforeRouteLeave(to: Route, from: Route, next: () => void): void {
     console.log('beforeRouteLeave');
-  }
-
-  // 方法
-  private changeTxt() {
-    const timer = setTimeout(() => {
-      this.selfKey1 += '--';
-      clearTimeout(timer);
-    }, 1000)
   }
 
   @Watch('$route', { immediate: true })
@@ -117,4 +90,11 @@ a {
 .nav-link {
   margin-top: 40px;
 }
+
+@for $i from 1 through 5 {
+  .font-size-#{$i} {
+    font-size: 16 + 2 * $i + px;
+  }
+}
+
 </style>
